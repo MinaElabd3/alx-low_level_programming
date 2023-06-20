@@ -5,7 +5,7 @@
  *
  * @n: the input number
  *
- * Return: return 0
+ * Return: return nothing
 */
 
 void print_to_98(int n)
