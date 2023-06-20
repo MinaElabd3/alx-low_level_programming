@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * Description: print_alphabet - from a to z
+ * print_alphabet - from (a to z).
 */
 
 void print_alphabet(void)
@@ -12,5 +12,5 @@ void print_alphabet(void)
 	{
 		_putchar(c);
 	}
-	_putchar('\n );
+	_putchar('\n');
 }
