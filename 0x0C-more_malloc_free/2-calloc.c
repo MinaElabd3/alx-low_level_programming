@@ -2,12 +2,12 @@
 #include "main.h"
 
 /**
- * *_memset - fills memory with a constant byte
+ * *_memset - a function that allocates memory for an array, using malloc.
  * @s: memory area to be filled
- * @b: char to copy
+ * @b: char to be copied
  * @n: number of times to copy b
  *
- * Return: pointer to the memory area s
+ * Return: pointer
  */
 
 	void *_calloc(unsigned int nmemb, unsigned int size)
