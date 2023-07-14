@@ -9,32 +9,41 @@
  * @n: number of bytes
  *
  * Return: pointer to the resulting string
+ *
  */
-
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-if (s1 == NULL)
-{
-s1 = "";
-}
-if (s2 == NULL)
-{
-s2 = "";
-}
-size_t s1_len = strlen(s1);
-if (n >= strlen(s2))
-{
-n = strlen(s2);
-}
-char *new_string = malloc(s1_len + n + 1);
+	char *s;
+	unsigned int i = 0, j = 0, len1 = 0, len2 = 0;
 
-memcpy(new_string, s1, s1_len);
+	while (s1 && s1[len1])
+		len1++;
+	while (s2 && s2[len2])
+		len2++;
 
-memcpy(new_string + s1_len, s2, n);
+	if (n < len2)
+		s = malloc(sizeof(char) * (len1 + n + 1));
+	else
+		s = malloc(sizeof(char) * (len1 + len2 + 1));
 
-new_string[s1_len + n] = '\0';
+	if (!s)
+		return (NULL);
 
-return (new_string);
+	while (i < len1)
+	{
+		s[i] = s1[i];
+		i++;
+	}
+
+	while (n < len2 && i < (len1 + n))
+		s[i++] = s2[j++];
+
+	while (n >= len2 && i < (len1 + len2))
+		s[i++] = s2[j++];
+
+	s[i] = '\0';
+
+	return (s);
 }
 
